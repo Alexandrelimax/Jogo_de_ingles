@@ -1,38 +1,26 @@
 const container = document.querySelector(".main-container");
-const hearts = document.querySelector('.hearts span')
+
 const start = document.querySelector(".menu li:first-child a");
-const spans = document.querySelectorAll(".answer span");
-const buttonConfirm = document.querySelector(".confirm");
+
 const buttonNext = document.querySelector(".next");
 
 const createQuestion = ({ question }) => {
-  const h3 = document.createElement("h3");
-
-  h3.innerHTML = question;
-  return h3;
-};
-
-
-const appendQuestionOnDiv = (content_question) => {
   const containerQuestion = document.querySelector(".question");
-  containerQuestion.innerHTML = "";
-  containerQuestion.appendChild(content_question);
+  containerQuestion.innerHTML = `<h3>${question}</h3>`
 };
-
-
-const setAnswerOnSpan = ({ answers }) => {
-  spans.forEach((span, index) => {
-    span.innerHTML = answers[index];
-  });
-};
-
 
 const removeClassOnElement = (item) => {
   item.removeAttribute("class");
 };
+const createAnswers = ({answers}) =>{
+  const divAnswers = document.querySelector(".answer");
 
+  const spans = answers.map(answer =>`<span>${answer}</span>`).join('');
+  divAnswers.innerHTML = spans
+}
 
 const choosenAnswer = () => {
+  const spans = document.querySelectorAll('.answer span')
   spans.forEach((choosen) => {
     choosen.addEventListener("click", () => {
       spans.forEach(removeClassOnElement);
@@ -51,66 +39,82 @@ const verifyAnswer = (contentAnswer, { correctAnswer }) => {
   return `${message}|${status}`;
 };
 
-
 const sendAnswer = (questions) => {
+  const buttonConfirm = document.querySelector(".confirm");
+
   buttonConfirm.addEventListener("click", () => {
     const userAnswer = document.querySelector(".selected");
     if (!userAnswer) return;
     const contentAnswer = userAnswer.textContent;
+    console.log('ola');
     const result = verifyAnswer(contentAnswer, questions);
     setMessageAboutAnswer(result);
-    
-    checkLives(result, hearts);
+
+    checkLives(result);
   });
 };
 
-
 start.addEventListener("click", (event) => {
   event.preventDefault();
-  container.style.display = 'flex';
-  hearts.innerHTML = '5'
-  const question = createQuestion(arr[0]);
-
-  appendQuestionOnDiv(question);
-
-  setAnswerOnSpan(arr[0]);
-
+  createLives()
+  createQuestion(arr[0]);
+  createAnswers(arr[0])
+  createButtonsActions()
   choosenAnswer();
-sendAnswer(arr[0]);
-
+  sendAnswer(arr[0]);
 
 });
 
-const checkLives = (result, hearts) =>{    
-    const status = result.split('|')[1];
+const createLives = () =>{
+  const hearts = document.querySelector(".hearts");
+  hearts.innerHTML = `<i class="bi bi-heart-fill"></i><span>5</span>`
+}
 
-    if(status === 'error'){
-        hearts.innerHTML = Number(--hearts.textContent)
-    }
-    
-    if(hearts.textContent === '0'){
-        console.log('game over');
-    }
+
+const checkLives = (result) => {
+  const quantityLives = document.querySelector('.hearts span')
+
+  const status = result.split("|")[1];
+
+  if (status === "error") {
+    quantityLives.innerHTML = Number(--quantityLives.textContent);
+  }
+
+  if (quantityLives.textContent === "0") {
+    gameOver();
+  }
+};
+
+const gameOver = ()=>{
+  container.innerHTML = `<div class='game_over'>Game Over!</div>`
+  container.style.backgroundColor = '#9c0808'
 }
 
 
 const setMessageAboutAnswer = (result) => {
-  resetMessage(container);
-  const div = document.createElement("div");
-
+  const divMessage = document.querySelector('.message')
   const [message, status] = result.split("|");
-
-  div.innerHTML = message;
-  div.classList.add("message");
-  div.classList.add(status);
-  container.insertAdjacentElement("afterbegin", div);
+  divMessage.innerHTML = `<div class='message ${status}'>${message}</div>`
 };
 
 
-const resetMessage = (parent) => {
-  const divMessage = document.querySelector(".message");
-  divMessage && parent.removeChild(divMessage);
-};
+
+const createButtonsActions =()=>{
+  const divActions = document.querySelector('.actions')
+  divActions.innerHTML = `<button class="confirm">Confirmar resposta</button>
+                          <button class="next">Pular resposta</button>`
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
