@@ -1,0 +1,153 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5cccdc;
+    border-bottom: 1px solid black;
+    padding: 1em;
+}
+.menu{
+    display: flex;
+    list-style: none;
+    gap: .5em
+
+}
+.logo, .menu a{
+    text-decoration: none;
+    font-size: 1.2em;
+    color: rgb(21, 20, 18);
+}
+.menu a{
+    padding: .5em;
+    transition: .5s;
+    border-radius: 5px;
+}
+.menu a:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+@media (max-width:700px){
+    .menu{
+        display: flex;
+        flex-direction: column;
+        transition: .5s;
+    }
+}
+.message{
+    min-width:300px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+}
+.error{
+    background-color: #ee95aa;
+    color: #9c0808;
+}
+.success{
+    background-color: #b8fcbe;
+    color: #0c7e1f;
+}
+.main-container{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #185368;
+    max-width: 100%;
+    min-height: 80vh;
+}
+.hearts{
+    font-size: 50px;
+    display: flex;
+    align-self:flex-end;
+    margin-right: 50px;
+    align-items: center;
+    gap: 5px;
+
+}
+.hearts .bi.bi-heart-fill{
+    color: #e03c62;
+}
+.hearts span{
+    padding-top: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.question{
+   
+    margin: 1em;
+    background-color: #fff;
+    padding: 1em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.answer{
+    display: flex;
+    justify-content: center;
+    gap:1em
+}
+.answer span{
+    padding: .8em 3em ;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+@media (max-width:600px){
+    .answer{
+        flex-direction: column;
+    }
+    .answer span{
+        margin: 0px;
+    }
+}
+.actions{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.confirm,
+.next{
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    transition: .5s;
+    cursor: pointer;
+}
+.confirm:hover,
+.next:hover{
+    font-size: 20px;
+}
+.confirm{
+    background-color: green;
+}
+.next{
+    background-color: #e03c62;
+}
+
+
+
+footer{
+    min-height: 10vh;
+    background-color: #5cccdc;
+    text-align: center;
+}
+.answer .selected{
+    background-color: blue;
+}
+
