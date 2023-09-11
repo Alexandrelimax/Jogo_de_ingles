@@ -18,3 +18,5 @@ Eu fiz este game com o intuito de ajudar minha irmã nos estudos de ingles dela.
 - **CSS**
 - **Javascript**
 - **Express**
+
+## O jogo ainda está em desenvolvimento  
