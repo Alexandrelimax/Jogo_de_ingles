@@ -60,7 +60,8 @@
     background-image: url('../imgs/scattered-forcefields.svg');
     max-width: 1400px;
     min-height: 80vh;
-    padding: 3em;
+    padding: 3em 0em;
+
 }
 .game-area{
     background-color: #42168f;
