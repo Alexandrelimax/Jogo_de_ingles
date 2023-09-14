@@ -47,7 +47,7 @@
     text-align: center;
     border-radius: 4px;
 }
-.error{
+.failed{
     background-color: #ee95aa;
     color: #9c0808;
 }
@@ -66,7 +66,7 @@
 .game-area{
     background-color: #42168f;
     margin: auto;
-    display: flex;
+    display: none;
     flex-direction: column;
     max-width: 600px;
     padding: 1em;
@@ -76,19 +76,28 @@
 .hearts{
     font-size: 50px;
     display: flex;
-    align-self:flex-end;
-    margin-right: 50px;
+    justify-content: space-between;
     align-items: center;
-    gap: 5px;
+    margin: 0 20px;
     margin-bottom: 10px;
 
+}
+
+.icon-score,
+.icon-heart{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.hearts .bi.bi-star-fill{
+    color: #dbd81d;
 }
 .hearts .bi.bi-heart-fill{
     color: #e03c62;
 }
 .hearts span{
-    padding-top: 10px;
-    font-size: 30px;
+    padding-top: 15px;
+    font-size: 50px;
     font-weight: bold;
 }
 .question h3{
@@ -122,7 +131,7 @@
     }
 }
 .actions{
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 2em;
     margin-bottom: 30px;
@@ -130,7 +139,7 @@
 .confirm,
 .next{
     padding: 10px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     border: none;
     border-radius: 4px;
@@ -148,7 +157,7 @@
 }
 .confirm:hover,
 .next:hover{
-    font-size: 20px;
+    font-size: 30px;
 }
 .confirm{
     background-color: green;
@@ -173,13 +182,28 @@ footer{
 }
 
 .game_over{
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #9c0808;
+}
+.game_over span{
+    font-family: 'Metal Mania', cursive;
+    font-weight: bold;
     color: #160f0f;
     font-size: 100px;
-    font-weight: bold;
-    font-family: 'Metal Mania', cursive;
-    text-align: center;
-    padding: 20px;
     text-shadow: 0px 0px 50px black;
-    border: transparent;
+    text-align: center;
+    
+}
+.bad{
+    border: 2px solid rgb(173, 13, 13);
+    background-color: #f26b6b !important;
+    box-shadow: 0 0 15px rgb(211, 31, 31);
+}
+.good{
+    border: 2px solid rgb(26, 173, 13);
+    background-color: #6bf276 !important; 
+    box-shadow: 0 0 15px rgb(31, 211, 106);
 }
