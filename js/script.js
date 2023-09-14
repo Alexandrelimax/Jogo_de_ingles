@@ -40,7 +40,7 @@ const sendAnswer = () => {
   paintCorrectAnswer(contentAnswer, correctAnswer)
   setMessageAboutAnswer(message, status);
   callbackFunction();
-  // resetGame()
+  resetGame()
 };
 
 const paintCorrectAnswer = (contentAnswer, correctAnswer)=>{
