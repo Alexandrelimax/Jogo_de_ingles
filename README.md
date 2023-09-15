@@ -17,6 +17,11 @@ Eu fiz este game com o intuito de ajudar minha irmã nos estudos de ingles dela.
 - **Html**
 - **CSS**
 - **Javascript**
-- **Express**
 
-## O jogo ainda está em desenvolvimento  
+## Foto do Jogo  
+
+![JogoIngles](https://github.com/Alexandrelimax/Jogo_de_ingles/assets/96657257/debb9a39-3156-406d-8e1d-3d345de043a8)
+
+## Game Over (Quando o usuário perde todas as vidas)
+
+![gameover](https://github.com/Alexandrelimax/Jogo_de_ingles/assets/96657257/82dfe007-619b-4d1a-b491-73665fb1ab14)
