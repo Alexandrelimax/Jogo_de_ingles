@@ -16,7 +16,8 @@ start.addEventListener("click", (event) => {
 
 const startNewGame = async () => {
   try {
-    const { question, answers, correctAnswer:correctAnswerAPI } = await getQuestionsByAPI();
+    const data = await getQuestionsByAPI();
+    const { question, answers, correctAnswer:correctAnswerAPI } = selectQuestion(data);
     correctAnswer = correctAnswerAPI;
     createQuestion(question);
     createAnswers(answers);
@@ -128,9 +129,8 @@ const gameOver = () => {
 };
 
 const getQuestionsByAPI = async () => {
-  const url = "http://localhost:3000/getQuestion";
   try {
-    const response = await fetch(url);
+    const response = await fetch('../db/data.json');
     const data = await response.json();
     return data;
   } catch (error) {
@@ -139,3 +139,7 @@ const getQuestionsByAPI = async () => {
 };
 
 
+const selectQuestion = data =>{
+  const randomQuestion = Math.floor(Math.random() * data.length)
+  return data[randomQuestion]
+}

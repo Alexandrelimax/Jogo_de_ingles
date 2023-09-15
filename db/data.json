@@ -1,0 +1,47 @@
+[
+    {
+      "question": "The policeman________was shot yesterday died today",
+      "answers": ["who", "that", "whose"],
+      "correctAnswer": "who"
+    },
+    {
+      "question": "_______is that person over there? It's my cousin Mike",
+      "answers": ["that", "who", "which"],
+      "correctAnswer": "who"
+    },
+    {
+      "question": "The man________saved me from the bandit was very old",
+      "answers": ["whose", "what", "who"],
+      "correctAnswer": "who"
+    },
+    {
+      "question": "_______country are you going to on your vacation? To England or to Italy?",
+      "answers": ["What", "Which", "Where"],
+      "correctAnswer": "Which"
+    },
+    {
+      "question": "________are you sexist? You must respect women's thoughts.",
+      "answers": ["What", "Because", "Why"],
+      "correctAnswer": "Why"
+    },
+    {
+      "question": "_______is the shoe shop, please? Is it on this street?",
+      "answers": ["Whose", "What", "Where"],
+      "correctAnswer": "Where"
+    },
+    {
+      "question": "Everything_________I need is to lie down on my bed",
+      "answers": ["who", "that", "whose"],
+      "correctAnswer": "that"
+    },
+    {
+      "question": "The house_________you would like to buy was sold some minute!",
+      "answers": ["that", "who", "whose"],
+      "correctAnswer": "that"
+    },
+    {
+      "question": "The animal_________was in the zoo was a rhinoceros, not a hippopotamus",
+      "answers": ["who", "that", "this"],
+      "correctAnswer": "that"
+    }
+  ]
