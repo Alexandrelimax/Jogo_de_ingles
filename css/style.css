@@ -41,6 +41,21 @@
         transition: .5s;
     }
 }
+.startButton{
+
+    margin: 0 auto;
+}
+.startButton button[data-js="start"]{
+    border-radius: 30px;
+    padding: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: #6bf276;
+    color: #fff;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0 25px;
+}
 .message{
     min-width:300px;
     padding: 10px;
@@ -56,6 +71,8 @@
     color: #0c7e1f;
 }
 .main-container{
+    display: flex;
+    align-items: center;
     margin: auto;
     background-image: url('../imgs/scattered-forcefields.svg');
     max-width: 1400px;
@@ -183,12 +200,13 @@ footer{
 
 .game_over{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 80vh;
     background-color: #9c0808;
 }
-.game_over span{
+.game_over .game-over-message{
     font-family: 'Metal Mania', cursive;
     font-weight: bold;
     color: #160f0f;
